@@ -35,17 +35,20 @@ def main():
 
     # User input penjelasan survey
     explanation = st.text_area("Provide a description of your survey:")
-
+    
     if st.button('Generate Survey Questions'):
-        if explanation:
-            # Mendapatkan list pertanyaan survey
-            questions = generate_survey_questions(explanation)
+        questions = generate_survey_questions(explanation)
+        st.write(questions)
+        
+        # if explanation:
+        #     # Mendapatkan list pertanyaan survey
+        #     questions = generate_survey_questions(explanation)
             
-            st.subheader('Suggested Survey Questions:')
-            for idx, question in enumerate(questions, 1):
-                st.write(f"{idx}. {question}")
-        else:
-            st.warning("Please provide a description for your survey.")
+        #     st.subheader('Suggested Survey Questions:')
+        #     for idx, question in enumerate(questions, 1):
+        #         st.write(f"{idx}. {question}")
+        # else:
+        #     st.warning("Please provide a description for your survey.")
 
 if __name__ == "__main__":
     main()
