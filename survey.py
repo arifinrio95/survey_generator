@@ -10,8 +10,9 @@ def generate_survey_questions(prompt):
     """
     
     messages = [
-        {"role": "system", "content": "Aku akan membuatkan pertanyaan2 survey."},
-        {"role": "user", "content": f"""Buatkan pertanyaan2 survey dari objective berikut: {prompt}"""}
+        {"role": "system", "content": "Aku akan membantumu melakukan survey."},
+        {"role": "user", "content": f"""Dari deskripsi yang akan saya berikan, buatkan list profil responden yang tepat, dan list aplikasi startup di Indonesia yang userbasenya sesuai,
+                                        lalu buatkan 10 pertanyaan yang sesuai dengan deskripsi. Berikut adalah deskripsinya : {prompt}"""}
     ]
 
     response = openai.ChatCompletion.create(
