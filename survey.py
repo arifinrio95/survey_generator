@@ -32,7 +32,7 @@ def generate_survey_questions(prompt):
     return questions
 
 def main():
-    st.title('Survey Question Generator')
+    st.title('Survey Profile Generator')
 
     # User input penjelasan survey
     explanation = st.text_area("Provide a description of your survey:")
