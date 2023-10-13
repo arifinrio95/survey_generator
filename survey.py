@@ -4,7 +4,7 @@ import openai
 # Set API key dari OpenAI (Anda mungkin ingin menyembunyikannya atau menggunakan environment variables)
 openai.api_key = st.secrets['user_api']
 
-def generate_survey_questions(prompt, no_of_questions = 10):
+def generate_survey_questions(prompt, no_of_questions):
     """
     Fungsi untuk menghasilkan list pertanyaan survey dari input user dengan bantuan ChatGPT.
     """
@@ -38,7 +38,7 @@ def main():
     explanation = st.text_area("Provide a description of your survey:")
     no_of_questions = st.selectbox("Pilih jumlah pertanyaan", list(range(5, 26)))
     
-    if st.button('Generate Survey Questions'):
+    if st.button('Generate Survey Leads'):
         questions = generate_survey_questions(explanation, no_of_questions)
         st.write(questions)
         
